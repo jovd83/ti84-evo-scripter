@@ -1,0 +1,17 @@
+name: skill-lint
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  skill-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: jovd83/skill-lint@v3
+        with:
+          path: .
